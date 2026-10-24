@@ -27,10 +27,10 @@ Status is shown in words, not just color. A "How to read this" legend explains e
 Open Targets Platform (GraphQL API) and PubMed (NCBI E-utilities), both listed among the challenge's biotechnology resources.
 
 ## How we used Kiro
-Requirements-first specs (14 requirements, a ~700-line design, 19 tasks), a project steering file that forced parsers to be built against saved real responses, two agent hooks, and Hypothesis property tests for 11 correctness properties, one of which caught a real Unicode bug. See docs/kiro-writeup.md.
+Requirements-first specs (14 requirements, a ~700-line design, 19 tasks), a project steering file that forced parsers to be built against saved real responses, two agent hooks, a small MCP server that lets Kiro call the verifier directly, and Hypothesis property tests for 11 correctness properties, one of which caught a real Unicode bug. See docs/kiro-writeup.md.
 
 ## Limits
 Association scores and PubMed counts depend on those sources and on how queries are phrased. PubMed counts come from title and abstract matching, which is a rough proxy for how much a pair is discussed. The tool summarizes evidence; it does not establish causation.
 
 ## Try it
-Live demo: TODO (add link). Run locally: see README.md.
+Live demo: https://claim-ledger-hdzvxbdl2jalvcmnyiszhn.streamlit.app/ (works offline for EGFR, TP53, BRCA1 and PANK2, no login or keys needed). Run locally: see README.md.

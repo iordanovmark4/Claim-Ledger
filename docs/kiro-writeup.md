@@ -5,8 +5,7 @@ Track: Healthcare & Biotech (H4). Items marked TODO are not done yet and must be
 ## 1. Which Kiro tools we used
 
 - **Kiro IDE**: the main environment for the whole build (spec workflow, steering, hooks, chat sessions, task execution).
-- TODO: Kiro CLI. If we try it, describe one real task we ran there and how it differed from the IDE. If we do not use it, delete this line.
-- TODO: Kiro Web and Crew. Same rule: only describe them if used.
+- TODO (Mark): Kiro CLI, Web and Crew. Only add a line here if you actually used one for a real task. Otherwise delete this TODO and leave the IDE as the only tool listed.
 
 ## 2. Spec-driven development
 
@@ -17,6 +16,9 @@ We used the requirements-first workflow and approved each stage before moving on
 - **Design (about 700 lines).** Component diagram, data flow, data models, Evidence_ID scheme, the verifier and conflict rules, error handling, and 11 correctness properties mapped to requirements.
 - **Tasks (19 top-level).** Bottom-up and test-driven, with dependency waves. We ran them in batches of a few tasks and ran the test suite after each.
 - **A real mishap.** One round of requirement edits was shown in the editor but never written to disk. Kiro noticed the file was missing when we asked it to edit it, told us, and offered to regenerate it. We regenerated it with all changes included. The spec being on disk, not in chat, is what made the problem visible.
+- **The UI build did not go through the task subagent.** When Kiro tried to run task 18.1 in its task-execution subagent, the dispatch was blocked by an internal "child is not ready" guard after an interrupted first run, across every retry order. We told Kiro to build the Streamlit UI directly in the main chat under the same steering rules, and it marked the 18.x tasks complete only after the full suite passed and the app booted headless. This is logged in `docs/kiro-log.md`.
+- **The restyle was added to the spec as its own task (18.5).** The first UI worked but we did not like how it looked. Instead of free-form prompting, we asked for a presentation-only task with a written palette, shape and accessibility constraints, then ran the final validation (task 19) after it so the checks covered the finished version. Tests, claim text and notice wording were unchanged.
+- **A limit we found.** The final validation could not run the suite on Python 3.11 or 3.12 because only 3.14 was installed locally. Kiro said so and checked compatibility by reading the code instead of claiming a test it had not run. The real check is the Streamlit Cloud deployment on 3.12.
 - TODO: spec versus vibe coding. Do one small task in plain vibe chat (for example a UI polish change), and compare honestly: what was faster, what was less predictable, what was harder to review.
 
 ## 3. Steering
@@ -34,13 +36,15 @@ Two hooks in `.kiro/hooks/`:
 
 Note: the first versions of the hook files were rejected by Kiro because they began with an invisible UTF-8 byte order mark added on Windows. Stripping it fixed the problem.
 
-TODO: after the build, add one or two sentences on what each hook actually did or caught. If a hook never fired usefully, say so.
+TODO (Mark): ask Kiro "Did the pytest-on-save hook or the secret-scan hook ever fire during this build, and did either catch anything?" and write down its honest answer here. If neither fired usefully, say so.
 
 ## 5. MCP
 
 We built a small stdio MCP server (`mcp_server/server.py`) and registered it in `.kiro/settings/mcp.json` as `claim-ledger`. It exposes two tools: `lookup_gene_evidence(symbol)`, which runs the offline pipeline and returns verified claims, unsupported claims and conflict flags with their Evidence_IDs, and `verify_claim(claim_json, gene_symbol)`, which recomputes a claim's number from its saved evidence.
 
 We checked it in two ways. A smoke test over a real subprocess completed the MCP handshake and listed both tools. Then, from a Kiro chat, Kiro called `lookup_gene_evidence` for TP53 and got 20 verified claims, 0 unsupported and one Literature_Gap flag, and `verify_claim` on the top association returned Verified with a recomputed value identical to the claimed one.
+
+Kiro also re-verified a claim with its value altered by +0.25 and the verifier returned Unsupported with both numbers in the reason, which is the same tamper check the app shows in the UI, reached from outside it.
 
 Why it matters: Kiro can ask the verifier whether a number is backed by evidence while it works, instead of trusting its own output. The server uses the offline cache only, so it needs no network or keys.
 
@@ -58,5 +62,6 @@ TODO. Open the Powers panel in the IDE, install one that fits (for example a tes
 
 ## 8. Other notes
 
-- 228+ tests pass at the last count (unit, example and property tests).
+- 234 tests pass at the last count (unit, example and property tests), run with no network on the four example genes.
+- The Streamlit app was restyled to a black, gray and mint theme as a separate spec task, and deployed to Streamlit Community Cloud (link in the submission description).
 - Every parser was built against responses we saved from the real APIs before any code was written.

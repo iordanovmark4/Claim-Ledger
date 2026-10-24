@@ -180,19 +180,25 @@ html, body, [data-testid="stAppViewContainer"], .stApp {
 }
 .block-container { padding-top: 2.2rem; max-width: 1120px; }
 
-/* Faint grid texture behind the hero area only (subtle, non-animated). */
+/* Faint grid texture behind the hero area only (subtle, non-animated).
+   The fade mask lives on a pseudo-element so the hero TEXT is never faded. */
 .cl-hero {
+  position: relative;
   margin-bottom: 0.5rem;
   padding: 0.2rem 0 0.2rem 0;
+}
+.cl-hero::before {
+  content: "";
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
   background-image:
     linear-gradient(var(--cl-border) 1px, transparent 1px),
     linear-gradient(90deg, var(--cl-border) 1px, transparent 1px);
   background-size: 34px 34px;
   background-position: -1px -1px;
-  background-blend-mode: normal;
-  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.5), transparent 70%);
-          mask-image: linear-gradient(180deg, rgba(0,0,0,0.5), transparent 70%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.5), transparent 90%);
+          mask-image: linear-gradient(180deg, rgba(0,0,0,0.5), transparent 90%);
 }
+.cl-hero > * { position: relative; z-index: 1; }
 .cl-hero-name {
   font-family: var(--cl-sans);
   font-size: 2.3rem; font-weight: 700; letter-spacing: -0.01em;
@@ -589,6 +595,16 @@ def _run_chosen_hit(hit, thresholds: Thresholds, offline: bool) -> None:
 # Input section                                                               #
 # --------------------------------------------------------------------------- #
 
+def _pick_example(gene: str) -> None:
+    """Button callback: set the text box value BEFORE the widget is created.
+
+    Streamlit forbids assigning to a widget's session_state key after the widget
+    has been instantiated in the same run, so this runs as an on_click callback.
+    """
+    st.session_state["gene_text"] = gene
+    st.session_state["example_to_run"] = gene
+
+
 def render_input(thresholds: Thresholds, offline: bool) -> None:
     """Gene text input + Analyze button + four example buttons (Req 1.1, 1.4)."""
     st.markdown('<p class="cl-section-label">ANALYZE A GENE</p>', unsafe_allow_html=True)
@@ -614,9 +630,17 @@ def render_input(thresholds: Thresholds, offline: bool) -> None:
     ex_cols = st.columns(len(EXAMPLE_GENES))
     for col, gene in zip(ex_cols, EXAMPLE_GENES):
         with col:
-            if st.button(gene, key=f"ex_{gene}", use_container_width=True):
-                st.session_state["gene_text"] = gene
-                _run_symbol(gene, thresholds, offline)
+            st.button(
+                gene,
+                key=f"ex_{gene}",
+                use_container_width=True,
+                on_click=_pick_example,
+                args=(gene,),
+            )
+    # The callback ran before this rerun, so the text box already shows the gene.
+    example = st.session_state.pop("example_to_run", None)
+    if example:
+        _run_symbol(example, thresholds, offline)
 
     # Disambiguation list (Req 1.6): shown with NO auto-selection.
     ss = st.session_state
