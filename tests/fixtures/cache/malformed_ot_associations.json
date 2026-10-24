@@ -1,0 +1,84 @@
+{
+  "source_url": "https://api.platform.opentargets.org/api/v4/graphql",
+  "retrieved_at": "2026-10-24T15:21:35.098870Z",
+  "payload": {
+    "data": {
+      "target": {
+        "id": "ENSG00000146648",
+        "approvedSymbol": "EGFR",
+        "approvedName": "epidermal growth factor receptor",
+        "associatedDiseases": {
+          "count": 4,
+          "rows": [
+            {
+              "score": 0.8503239816603523,
+              "datatypeScores": [
+                {
+                  "id": "clinical",
+                  "score": 0.9959475193895682
+                },
+                {
+                  "id": "literature",
+                  "score": 0.9996584498625893
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.6991204172533643
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0005233",
+                "name": "non-small cell lung carcinoma"
+              }
+            },
+            {
+              "datatypeScores": [
+                {
+                  "id": "clinical",
+                  "score": 0.6619148537826977
+                },
+                {
+                  "id": "literature",
+                  "score": 0.9974441131848238
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0005061",
+                "name": "lung adenocarcinoma"
+              }
+            },
+            {
+              "score": 0.7369034892013269,
+              "datatypeScores": [
+                {
+                  "id": "literature",
+                  "score": 0.9941497202576182
+                },
+                {
+                  "id": "clinical",
+                  "score": 0.792415739687779
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0004992"
+              }
+            },
+            {
+              "score": 0.7173442514015181,
+              "datatypeScores": [
+                {
+                  "id": "clinical",
+                  "score": 0.8358353632185213
+                },
+                {
+                  "id": "literature",
+                  "score": 0.996324305053686
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

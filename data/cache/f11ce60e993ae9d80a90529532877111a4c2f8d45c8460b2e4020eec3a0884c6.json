@@ -1,0 +1,159 @@
+{
+  "source_url": "https://api.platform.opentargets.org/api/v4/graphql",
+  "retrieved_at": "2026-10-24T20:13:21.791582Z",
+  "payload": {
+    "data": {
+      "target": {
+        "id": "ENSG00000146648",
+        "approvedSymbol": "EGFR",
+        "approvedName": "epidermal growth factor receptor",
+        "associatedDiseases": {
+          "count": 5860,
+          "rows": [
+            {
+              "score": 0.8503239816603523,
+              "datatypeScores": [
+                {
+                  "id": "clinical",
+                  "score": 0.9959475193895682
+                },
+                {
+                  "id": "genetic_literature",
+                  "score": 0.607930797611621
+                },
+                {
+                  "id": "affected_pathway",
+                  "score": 0.8209966976180988
+                },
+                {
+                  "id": "literature",
+                  "score": 0.9996584498625893
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.6991204172533643
+                },
+                {
+                  "id": "somatic_mutation",
+                  "score": 0.8315878016229145
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0005233",
+                "name": "non-small cell lung carcinoma"
+              }
+            },
+            {
+              "score": 0.7744562914488016,
+              "datatypeScores": [
+                {
+                  "id": "clinical",
+                  "score": 0.6619148537826977
+                },
+                {
+                  "id": "affected_pathway",
+                  "score": 0.8274613634158176
+                },
+                {
+                  "id": "literature",
+                  "score": 0.9974441131848238
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.7193847771737517
+                },
+                {
+                  "id": "somatic_mutation",
+                  "score": 0.8671499172689117
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0005061",
+                "name": "lung adenocarcinoma"
+              }
+            },
+            {
+              "score": 0.7369034892013269,
+              "datatypeScores": [
+                {
+                  "id": "literature",
+                  "score": 0.9941497202576182
+                },
+                {
+                  "id": "affected_pathway",
+                  "score": 0.9919541334408821
+                },
+                {
+                  "id": "clinical",
+                  "score": 0.792415739687779
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0004992",
+                "name": "cancer"
+              }
+            },
+            {
+              "score": 0.7252247339566977,
+              "datatypeScores": [
+                {
+                  "id": "clinical",
+                  "score": 0.8752196118202344
+                },
+                {
+                  "id": "affected_pathway",
+                  "score": 0.607930797611621
+                },
+                {
+                  "id": "literature",
+                  "score": 0.9932382377810538
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.8159951130941984
+                },
+                {
+                  "id": "somatic_mutation",
+                  "score": 0.4559480982087158
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0010150",
+                "name": "head and neck squamous cell carcinoma"
+              }
+            },
+            {
+              "score": 0.7173442514015181,
+              "datatypeScores": [
+                {
+                  "id": "clinical",
+                  "score": 0.8358353632185213
+                },
+                {
+                  "id": "genetic_literature",
+                  "score": 0.607930797611621
+                },
+                {
+                  "id": "literature",
+                  "score": 0.996324305053686
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.7944534880727478
+                },
+                {
+                  "id": "somatic_mutation",
+                  "score": 0.6991204172533643
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0008903",
+                "name": "lung cancer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

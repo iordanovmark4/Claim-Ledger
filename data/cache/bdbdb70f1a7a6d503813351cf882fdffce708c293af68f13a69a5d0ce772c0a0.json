@@ -1,0 +1,137 @@
+{
+  "source_url": "https://api.platform.opentargets.org/api/v4/graphql",
+  "retrieved_at": "2026-10-24T20:13:30.206129Z",
+  "payload": {
+    "data": {
+      "search": {
+        "hits": [
+          {
+            "id": "ENSG00000012048",
+            "name": "BRCA1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000267595",
+            "name": "BRCA1P1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000136492",
+            "name": "BRIP1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000163930",
+            "name": "BAP1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000138376",
+            "name": "BARD1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000158019",
+            "name": "BABAM2",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000163322",
+            "name": "ABRAXAS1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000106009",
+            "name": "BRAT1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000105393",
+            "name": "BABAM1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000089234",
+            "name": "BRAP",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000198496",
+            "name": "NBR2",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000185515",
+            "name": "BRCC3",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000189167",
+            "name": "ZAR1L",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000198271",
+            "name": "KRTAP4-5",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000188554",
+            "name": "NBR1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000139618",
+            "name": "BRCA2",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000188986",
+            "name": "NELFB",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000051180",
+            "name": "RAD51",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000013441",
+            "name": "CLK1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000256683",
+            "name": "ZNF350",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000136147",
+            "name": "PHF11",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000171421",
+            "name": "MRPL36",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000087206",
+            "name": "UIMC1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000108830",
+            "name": "RND2",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000185379",
+            "name": "RAD51D",
+            "entity": "target"
+          }
+        ]
+      }
+    }
+  }
+}

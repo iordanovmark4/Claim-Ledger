@@ -1,0 +1,167 @@
+{
+  "source_url": "https://api.platform.opentargets.org/api/v4/graphql",
+  "retrieved_at": "2026-10-24T20:13:25.102329Z",
+  "payload": {
+    "data": {
+      "target": {
+        "id": "ENSG00000141510",
+        "approvedSymbol": "TP53",
+        "approvedName": "tumor protein p53",
+        "associatedDiseases": {
+          "count": 5198,
+          "rows": [
+            {
+              "score": 0.8763240905984302,
+              "datatypeScores": [
+                {
+                  "id": "genetic_literature",
+                  "score": 0.8539007869518103
+                },
+                {
+                  "id": "literature",
+                  "score": 0.372399684507101
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.9564356539451176
+                },
+                {
+                  "id": "somatic_mutation",
+                  "score": 0.4377101742803672
+                },
+                {
+                  "id": "animal_model",
+                  "score": 0.6372497734413094
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0018875",
+                "name": "Li-Fraumeni syndrome"
+              }
+            },
+            {
+              "score": 0.7969946589966099,
+              "datatypeScores": [
+                {
+                  "id": "genetic_literature",
+                  "score": 0.607930797611621
+                },
+                {
+                  "id": "literature",
+                  "score": 0.9965405212865955
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.9161436221556352
+                },
+                {
+                  "id": "somatic_mutation",
+                  "score": 0.8546930263671441
+                },
+                {
+                  "id": "animal_model",
+                  "score": 0.614403007073547
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0007256",
+                "name": "hepatocellular carcinoma"
+              }
+            },
+            {
+              "score": 0.7771072348484183,
+              "datatypeScores": [
+                {
+                  "id": "genetic_literature",
+                  "score": 0.607930797611621
+                },
+                {
+                  "id": "clinical",
+                  "score": 0.12158615952232422
+                },
+                {
+                  "id": "literature",
+                  "score": 0.9871946873662976
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.837452876104994
+                },
+                {
+                  "id": "somatic_mutation",
+                  "score": 0.8687764418823478
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0010150",
+                "name": "head and neck squamous cell carcinoma"
+              }
+            },
+            {
+              "score": 0.7664749612489613,
+              "datatypeScores": [
+                {
+                  "id": "genetic_literature",
+                  "score": 0.8334055756591312
+                },
+                {
+                  "id": "literature",
+                  "score": 0.05644387031185621
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.8562672705524287
+                },
+                {
+                  "id": "somatic_mutation",
+                  "score": 0.3039653988058105
+                },
+                {
+                  "id": "animal_model",
+                  "score": 0.3718104758192674
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0009837",
+                "name": "choroid plexus papilloma"
+              }
+            },
+            {
+              "score": 0.7500093813544602,
+              "datatypeScores": [
+                {
+                  "id": "clinical",
+                  "score": 0.10638788958203368
+                },
+                {
+                  "id": "genetic_literature",
+                  "score": 0.8274613634158176
+                },
+                {
+                  "id": "literature",
+                  "score": 0.9724730416240775
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.9138986656066158
+                },
+                {
+                  "id": "somatic_mutation",
+                  "score": 0.8340387335170519
+                },
+                {
+                  "id": "animal_model",
+                  "score": 0.5307394876750661
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0005575",
+                "name": "colorectal cancer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22TP53%22%5BTitle%2FAbstract%5D+AND+%22colorectal+cancer%22%5BTitle%2FAbstract%5D&retmax=3&retmode=json&tool=claimledger&email=hackathon%40example.com",
+  "retrieved_at": "2026-10-24T20:13:27.267717Z",
+  "payload": {
+    "header": {
+      "type": "esearch",
+      "version": "0.3"
+    },
+    "esearchresult": {
+      "count": "1552",
+      "retmax": "3",
+      "retstart": "0",
+      "idlist": [
+        "42885719",
+        "42882920",
+        "42882247"
+      ],
+      "translationset": [],
+      "querytranslation": "\"TP53\"[Title/Abstract] AND \"colorectal cancer\"[Title/Abstract]"
+    }
+  }
+}

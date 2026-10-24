@@ -1,0 +1,622 @@
+{
+  "pbtResults": {
+    "8.2 Write property test for score recomputation fidelity": {
+      "status": "passed",
+      "lastRunTimestamp": 1792862025282
+    },
+    "13.2 Write property test for rendering determinism": {
+      "status": "passed",
+      "lastRunTimestamp": 1792867346442
+    },
+    "15.2 Write property test for tamper rejection and reset": {
+      "status": "passed",
+      "lastRunTimestamp": 1792872037124
+    }
+  },
+  "executionHistory": {
+    "1.1 Create package skeleton and confirm dependencies": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859059901
+      },
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859289835
+      }
+    ],
+    "1.2 Implement Config and Thresholds dataclasses": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859292377
+      },
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859382881
+      }
+    ],
+    "1. Scaffold package, config, and dependencies": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859382915
+      }
+    ],
+    "1.3 Write unit tests for config defaults": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859386563
+      },
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859434308
+      }
+    ],
+    "2.1 Implement cache-envelope fixture loaders in conftest": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859437489
+      },
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859564782
+      }
+    ],
+    "2.2 Add a crafted malformed OT fixture for incomplete-row handling": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859567265
+      },
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859671926
+      }
+    ],
+    "2. Build fixture loaders against committed real responses (STEERING RULE 8 — do this before any parser)": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859671990
+      }
+    ],
+    "3.1 Implement model dataclasses with explicit serialization": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859674506
+      },
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859783409
+      }
+    ],
+    "3. Implement core data models": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859783456
+      }
+    ],
+    "3.2 Write unit tests for model construction and serialization": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859786793
+      },
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859884525
+      }
+    ],
+    "4.1 Implement ResponseCache": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792859886988
+      },
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792860003770
+      }
+    ],
+    "4.2 Implement RateLimiter and HttpFetcher with cache-first/fallback": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792860006057
+      },
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792860170976
+      }
+    ],
+    "4. Implement response cache and HTTP fetcher": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792860171035
+      }
+    ],
+    "4.3 Write example-based tests for rate limiting and cache fallback": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792860173324
+      },
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792860283713
+      }
+    ],
+    "5.1 Implement EvidenceStore and normalized-request-key ID minting": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792860286071
+      },
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792860461429
+      }
+    ],
+    "5.2 Write property test for Evidence_ID stability": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792860463687
+      },
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792860721847
+      }
+    ],
+    "5. Implement Evidence store with stable Evidence_IDs": [
+      {
+        "executionId": "a509bd34-c3ac-4f1f-ae99-83e95aea7b70",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792860721926
+      }
+    ],
+    "6.1 Implement OT search + resolution": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792860890055
+      },
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792861059294
+      }
+    ],
+    "6.2 Implement OT associations parser (parse datatype scores by id)": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792861061802
+      },
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792861235599
+      }
+    ],
+    "6. Implement Open Targets client and parsers (against committed fixtures)": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792861235676
+      }
+    ],
+    "6.3 Write example-based tests for OT parsing against the real fixtures": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792861238166
+      },
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792861376827
+      }
+    ],
+    "7.1 Implement PubMed esearch URL/param building and term formatting": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792861379459
+      },
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792861483827
+      }
+    ],
+    "7.2 Implement PubMed response parser": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792861486086
+      },
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792861649588
+      }
+    ],
+    "7. Implement PubMed client and parsers (against committed fixtures)": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792861649676
+      }
+    ],
+    "7.3 Write example-based tests for PubMed parsing against the real fixtures": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792861652183
+      },
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792861754718
+      }
+    ],
+    "8.1 Implement recompute_* pure functions": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792861757073
+      },
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792861913848
+      }
+    ],
+    "8.2 Write property test for score recomputation fidelity": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792861916188
+      },
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792862053630
+      }
+    ],
+    "8. Implement the shared recompute functions (single source of truth)": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792862053710
+      }
+    ],
+    "9.1 Implement ClaimBuilder for all five claim types": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792862056147
+      },
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792864177661
+      }
+    ],
+    "9.2 Write property test for no-claim-without-evidence": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792864180163
+      },
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792864337395
+      }
+    ],
+    "9. Implement the Claim Builder": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792864337514
+      }
+    ],
+    "10.1 Implement recompute-and-compare verification with no repair": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792864339831
+      },
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792864542948
+      }
+    ],
+    "10.2 Write property test for verifier soundness and completeness": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792864545489
+      },
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792864732741
+      }
+    ],
+    "10.3 Write property test for the no-repair invariant": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792864735366
+      },
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792864947972
+      }
+    ],
+    "10. Implement the Verifier": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792864948062
+      }
+    ],
+    "11. Checkpoint - core evidence/claim/verify pipeline": [
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792864952846
+      },
+      {
+        "executionId": "8298af9b-efc1-419a-ba38-3345d2886d44",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792865007774
+      }
+    ],
+    "12.1 Implement the two named, order-independent conflict rules": [
+      {
+        "executionId": "0b854cef-54ec-4a57-b0ed-0286c44f84d5",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792865231455
+      },
+      {
+        "executionId": "0b854cef-54ec-4a57-b0ed-0286c44f84d5",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792865829200
+      }
+    ],
+    "12.2 Write property test for conflict symmetry and order-independence": [
+      {
+        "executionId": "0b854cef-54ec-4a57-b0ed-0286c44f84d5",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792865837797
+      },
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792866741765
+      },
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792866902648
+      }
+    ],
+    "12. Implement the Conflict Detector": [
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792866902834
+      }
+    ],
+    "13.1 Implement template-based renderer and render-time wording guard": [
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792866905654
+      },
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792867217220
+      }
+    ],
+    "13.2 Write property test for rendering determinism": [
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792867219963
+      },
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792867388076
+      }
+    ],
+    "13.3 Write property test for rendering provenance": [
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792867391030
+      },
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792867708237
+      }
+    ],
+    "13.4 Write property test for wording and score-label safety": [
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792867711048
+      },
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792869482138
+      }
+    ],
+    "13. Implement the deterministic Dossier Renderer with wording guard": [
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792869482242
+      }
+    ],
+    "14.1 Implement JSON + Markdown export": [
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792869484907
+      },
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792871315973
+      }
+    ],
+    "14.2 Write property test for parse round-trip": [
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792871318506
+      },
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792871501563
+      }
+    ],
+    "14. Implement the Exporter and parse round-trip": [
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792871501667
+      }
+    ],
+    "15.1 Implement tamper and reset operating only on Claim.value": [
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792871504265
+      },
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792871693563
+      }
+    ],
+    "15.2 Write property test for tamper rejection and reset": [
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792871696151
+      },
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792872192136
+      }
+    ],
+    "15. Implement the Tamper / Reset mechanism": [
+      {
+        "executionId": "833430ab-621a-4ccd-a318-f5f7569e2b85",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792872192229
+      }
+    ],
+    "16.1 Select and fetch the fourth lesser-studied gene so it trips a conflict flag": [
+      {
+        "executionId": "f06ae7b2-ad32-45d8-bf21-c0643fb89ac0",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792872397863
+      },
+      {
+        "executionId": "f06ae7b2-ad32-45d8-bf21-c0643fb89ac0",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792872716739
+      }
+    ],
+    "16.2 Commit cached responses for all four Example_Genes": [
+      {
+        "executionId": "f06ae7b2-ad32-45d8-bf21-c0643fb89ac0",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792872719386
+      },
+      {
+        "executionId": "f06ae7b2-ad32-45d8-bf21-c0643fb89ac0",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792873031195
+      }
+    ],
+    "16. Generate and validate the four Example_Genes offline cache": [
+      {
+        "executionId": "f06ae7b2-ad32-45d8-bf21-c0643fb89ac0",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792873031291
+      }
+    ],
+    "16.3 Write example-based offline test for all four Example_Genes": [
+      {
+        "executionId": "f06ae7b2-ad32-45d8-bf21-c0643fb89ac0",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792873034790
+      },
+      {
+        "executionId": "f06ae7b2-ad32-45d8-bf21-c0643fb89ac0",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792873284749
+      }
+    ],
+    "17.1 Implement Pipeline sequencing all layers": [
+      {
+        "executionId": "f06ae7b2-ad32-45d8-bf21-c0643fb89ac0",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792873287352
+      },
+      {
+        "executionId": "f06ae7b2-ad32-45d8-bf21-c0643fb89ac0",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792873579058
+      }
+    ],
+    "17. Wire the Pipeline orchestrator": [
+      {
+        "executionId": "f06ae7b2-ad32-45d8-bf21-c0643fb89ac0",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792873579129
+      }
+    ],
+    "18.1 Implement gene input, validation, and disambiguation": [
+      {
+        "executionId": "0ec68f01-21ac-4723-b1c2-f4550e2e71e9",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792874065715
+      }
+    ]
+  }
+}

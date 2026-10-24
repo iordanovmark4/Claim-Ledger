@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "claimledger"
+version = "0.1.0"
+description = "Claim Ledger: an auditable, evidence-backed gene/disease dossier builder"
+requires-python = ">=3.10"
+dependencies = [
+    "streamlit==1.66.1",
+    "requests==2.34.2",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest==9.1.1",
+    "hypothesis==6.170.9",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+# src/ layout: make `import claimledger` work under pytest without installation.
+pythonpath = ["src"]
+testpaths = ["tests"]

@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "name": "Run pytest on source and test saves",
+  "description": "When any file under src/claimledger or tests is saved, run the pytest suite. If tests fail, diagnose and fix the cause in the implementation code - never by weakening, deleting, or skipping tests.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "src/claimledger/**/*.py",
+      "tests/**/*.py"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A file under src/claimledger/ or tests/ was just saved. Run the full test suite with `python -m pytest -q` from the workspace root (the project uses a src/ layout with pythonpath configured in pyproject.toml). If every test passes, report the pass count and stop. If any test fails: (1) read the failing test and the code under test to find the ROOT CAUSE; (2) fix the cause in the implementation code under src/claimledger/, NOT in the tests - do not weaken, delete, skip, xfail, or loosen any assertion or tolerance to make a test pass; (3) re-run `python -m pytest -q` and repeat until green. If a Hypothesis property test reports a counterexample, fix the code, add the shrunk counterexample as an explicit regression test, and append two lines to docs/kiro-log.md describing the bug and the fix. If after investigation a test itself is genuinely wrong (asserts behavior that contradicts the spec in .kiro/specs/claim-ledger), do not edit it silently - stop and explain the conflict to the user instead. Honor the non-negotiable rules in .kiro/steering/evidence-rules.md."
+  }
+}

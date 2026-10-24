@@ -1,0 +1,137 @@
+{
+  "source_url": "https://api.platform.opentargets.org/api/v4/graphql",
+  "retrieved_at": "2026-10-24T20:13:24.644214Z",
+  "payload": {
+    "data": {
+      "search": {
+        "hits": [
+          {
+            "id": "ENSG00000141510",
+            "name": "TP53",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000183632",
+            "name": "TP53TG3",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000172315",
+            "name": "TP53RK",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000278848",
+            "name": "TP53TG3F",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000205457",
+            "name": "TP53TG3C",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000182165",
+            "name": "TP53TG1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000205456",
+            "name": "TP53TG3D",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000124251",
+            "name": "TP53TG5",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000164938",
+            "name": "TP53INP1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000275034",
+            "name": "TP53TG3E",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000261509",
+            "name": "TP53TG3B",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000067369",
+            "name": "TP53BP1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000078804",
+            "name": "TP53INP2",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000175274",
+            "name": "TP53I11",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000143514",
+            "name": "TP53BP2",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000115129",
+            "name": "TP53I3",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000167543",
+            "name": "TP53I13",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000120471",
+            "name": "TP53AIP1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000048392",
+            "name": "RRM2B",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000141499",
+            "name": "WRAP53",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000078237",
+            "name": "TIGAR",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000177519",
+            "name": "RPRM",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000144034",
+            "name": "TPRKB",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000170855",
+            "name": "TRIAP1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000251095",
+            "name": "TRINGS",
+            "entity": "target"
+          }
+        ]
+      }
+    }
+  }
+}

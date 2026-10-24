@@ -1,0 +1,115 @@
+{
+  "source_url": "https://api.platform.opentargets.org/api/v4/graphql",
+  "retrieved_at": "2026-10-24T20:13:33.475935Z",
+  "payload": {
+    "data": {
+      "target": {
+        "id": "ENSG00000125779",
+        "approvedSymbol": "PANK2",
+        "approvedName": "pantothenate kinase 2",
+        "associatedDiseases": {
+          "count": 278,
+          "rows": [
+            {
+              "score": 0.8461774593110261,
+              "datatypeScores": [
+                {
+                  "id": "literature",
+                  "score": 0.33009720448751845
+                },
+                {
+                  "id": "animal_model",
+                  "score": 0.2501027301374209
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.975484084193812
+                },
+                {
+                  "id": "genetic_literature",
+                  "score": 0.8629165362838598
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0009319",
+                "name": "pantothenate kinase-associated neurodegeneration"
+              }
+            },
+            {
+              "score": 0.6583944861174352,
+              "datatypeScores": [
+                {
+                  "id": "genetic_association",
+                  "score": 0.8666446761610339
+                },
+                {
+                  "id": "genetic_literature",
+                  "score": 0.865457038266544
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0011798",
+                "name": "hypoprebetalipoproteinemia, acanthocytosis, retinitis pigmentosa, and pallidal degeneration"
+              }
+            },
+            {
+              "score": 0.6272251298077042,
+              "datatypeScores": [
+                {
+                  "id": "literature",
+                  "score": 0.1304672066729845
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.6535256074324927
+                },
+                {
+                  "id": "genetic_literature",
+                  "score": 0.865457038266544
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0003441",
+                "name": "dystonic disorder"
+              }
+            },
+            {
+              "score": 0.498599266516976,
+              "datatypeScores": [
+                {
+                  "id": "literature",
+                  "score": 0.08521846770868466
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.8158970098461505
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0003847",
+                "name": "hereditary disease"
+              }
+            },
+            {
+              "score": 0.4663680937807643,
+              "datatypeScores": [
+                {
+                  "id": "literature",
+                  "score": 0.14453208957818564
+                },
+                {
+                  "id": "genetic_literature",
+                  "score": 0.7599134970145264
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0018307",
+                "name": "neurodegeneration with brain iron accumulation"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

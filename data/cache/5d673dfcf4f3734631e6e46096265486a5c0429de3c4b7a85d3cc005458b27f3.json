@@ -1,0 +1,22 @@
+{
+  "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22BRCA1%22%5BTitle%2FAbstract%5D+AND+%22breast+neoplasm%22%5BTitle%2FAbstract%5D&retmax=3&retmode=json&tool=claimledger&email=hackathon%40example.com",
+  "retrieved_at": "2026-10-24T20:13:32.698758Z",
+  "payload": {
+    "header": {
+      "type": "esearch",
+      "version": "0.3"
+    },
+    "esearchresult": {
+      "count": "21",
+      "retmax": "3",
+      "retstart": "0",
+      "idlist": [
+        "38952553",
+        "38096711",
+        "37909344"
+      ],
+      "translationset": [],
+      "querytranslation": "\"BRCA1\"[Title/Abstract] AND \"breast neoplasm\"[Title/Abstract]"
+    }
+  }
+}

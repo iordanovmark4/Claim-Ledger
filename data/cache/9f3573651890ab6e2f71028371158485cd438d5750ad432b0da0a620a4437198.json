@@ -1,0 +1,27 @@
+{
+  "source_url": "https://api.platform.opentargets.org/api/v4/graphql",
+  "retrieved_at": "2026-10-24T20:13:33.100313Z",
+  "payload": {
+    "data": {
+      "search": {
+        "hits": [
+          {
+            "id": "ENSG00000125779",
+            "name": "PANK2",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000229539",
+            "name": "PANK2-AS1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000275582",
+            "name": "ENSG00000275582",
+            "entity": "target"
+          }
+        ]
+      }
+    }
+  }
+}

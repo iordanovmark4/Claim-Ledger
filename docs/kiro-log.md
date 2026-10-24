@@ -1,0 +1,2 @@
+Bug (Property 10, Evidence_ID stability): ot_search_request_key normalized symbols with str.upper(), so U+0130 "İ" and its lower-cased form "i\u0307" minted two different Evidence_IDs for one logical symbol — breaking OT_SEARCH cache/live parity.
+Fix: normalize via unicodedata.normalize("NFKC", symbol.strip()).casefold() so case-insensitive symbol matching holds across all of Unicode, not just ASCII; counterexample pinned by test_ot_search_dotted_capital_i_regression.

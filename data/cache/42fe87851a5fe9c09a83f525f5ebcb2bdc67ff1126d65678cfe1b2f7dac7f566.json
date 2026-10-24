@@ -1,0 +1,131 @@
+{
+  "source_url": "https://api.platform.opentargets.org/api/v4/graphql",
+  "retrieved_at": "2026-10-24T20:13:30.597936Z",
+  "payload": {
+    "data": {
+      "target": {
+        "id": "ENSG00000012048",
+        "approvedSymbol": "BRCA1",
+        "approvedName": "BRCA1 DNA repair associated",
+        "associatedDiseases": {
+          "count": 1324,
+          "rows": [
+            {
+              "score": 0.8436508158150241,
+              "datatypeScores": [
+                {
+                  "id": "literature",
+                  "score": 0.9984727309333157
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.9857814423386521
+                },
+                {
+                  "id": "genetic_literature",
+                  "score": 0.607930797611621
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0007254",
+                "name": "breast cancer"
+              }
+            },
+            {
+              "score": 0.8278837838347972,
+              "datatypeScores": [
+                {
+                  "id": "literature",
+                  "score": 0.40300598598830056
+                },
+                {
+                  "id": "animal_model",
+                  "score": 0.40179666241146067
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.9179786150922271
+                },
+                {
+                  "id": "genetic_literature",
+                  "score": 0.8855819352769478
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0003582",
+                "name": "hereditary breast ovarian cancer syndrome"
+              }
+            },
+            {
+              "score": 0.8173531116391729,
+              "datatypeScores": [
+                {
+                  "id": "literature",
+                  "score": 0.06068838056824011
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.9142416903942767
+                },
+                {
+                  "id": "genetic_literature",
+                  "score": 0.8405653132713544
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0054748",
+                "name": "Fanconi anemia, complementation group S"
+              }
+            },
+            {
+              "score": 0.8106717720582334,
+              "datatypeScores": [
+                {
+                  "id": "literature",
+                  "score": 0.992283807364206
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.9084799700362506
+                },
+                {
+                  "id": "somatic_mutation",
+                  "score": 0.870062387425325
+                },
+                {
+                  "id": "genetic_literature",
+                  "score": 0.607930797611621
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0008170",
+                "name": "ovarian cancer"
+              }
+            },
+            {
+              "score": 0.7998733941854641,
+              "datatypeScores": [
+                {
+                  "id": "literature",
+                  "score": 0.9442628241115062
+                },
+                {
+                  "id": "genetic_association",
+                  "score": 0.9732214211179049
+                },
+                {
+                  "id": "somatic_mutation",
+                  "score": 0.7866084138163167
+                }
+              ],
+              "disease": {
+                "id": "MONDO_0021100",
+                "name": "breast neoplasm"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

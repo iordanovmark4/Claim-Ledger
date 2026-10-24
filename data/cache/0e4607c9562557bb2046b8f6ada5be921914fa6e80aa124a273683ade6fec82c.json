@@ -1,0 +1,27 @@
+{
+  "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22BRCA1%22%5BTitle%2FAbstract%5D+AND+%22Fanconi+anemia%2C+complementation+group+S%22%5BTitle%2FAbstract%5D&retmax=3&retmode=json&tool=claimledger&email=hackathon%40example.com",
+  "retrieved_at": "2026-10-24T20:13:31.993870Z",
+  "payload": {
+    "header": {
+      "type": "esearch",
+      "version": "0.3"
+    },
+    "esearchresult": {
+      "count": "0",
+      "retmax": "0",
+      "retstart": "0",
+      "idlist": [],
+      "translationset": [],
+      "querytranslation": "\"BRCA1\"[Title/Abstract] AND \"Fanconi anemia, complementation group S\"[Title/Abstract]",
+      "warninglist": {
+        "phrasesignored": [],
+        "quotedphrasesnotfound": [
+          "\"Fanconi anemia, complementation group S\"[Title/Abstract]"
+        ],
+        "outputmessages": [
+          "No items found."
+        ]
+      }
+    }
+  }
+}

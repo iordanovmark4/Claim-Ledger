@@ -1,0 +1,77 @@
+{
+  "source_url": "https://api.platform.opentargets.org/api/v4/graphql",
+  "retrieved_at": "2026-10-24T20:13:21.400236Z",
+  "payload": {
+    "data": {
+      "search": {
+        "hits": [
+          {
+            "id": "ENSG00000146648",
+            "name": "EGFR",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000224057",
+            "name": "EGFR-AS1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000151491",
+            "name": "EPS8",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000224407",
+            "name": "EUDAL",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000280890",
+            "name": "ELDR",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000258451",
+            "name": "EGILA",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000176435",
+            "name": "CLEC14A",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000177885",
+            "name": "GRB2",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000154978",
+            "name": "VOPP1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000007384",
+            "name": "RHBDF1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000250742",
+            "name": "LINC02381",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000196712",
+            "name": "NF1",
+            "entity": "target"
+          },
+          {
+            "id": "ENSG00000186575",
+            "name": "NF2",
+            "entity": "target"
+          }
+        ]
+      }
+    }
+  }
+}

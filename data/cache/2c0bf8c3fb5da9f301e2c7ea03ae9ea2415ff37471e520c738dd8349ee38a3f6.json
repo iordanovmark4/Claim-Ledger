@@ -1,0 +1,22 @@
+{
+  "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22EGFR%22%5BTitle%2FAbstract%5D+AND+%22cancer%22%5BTitle%2FAbstract%5D&retmax=3&retmode=json&tool=claimledger&email=hackathon%40example.com",
+  "retrieved_at": "2026-10-24T20:13:23.277812Z",
+  "payload": {
+    "header": {
+      "type": "esearch",
+      "version": "0.3"
+    },
+    "esearchresult": {
+      "count": "49498",
+      "retmax": "3",
+      "retstart": "0",
+      "idlist": [
+        "42920570",
+        "42919442",
+        "42918663"
+      ],
+      "translationset": [],
+      "querytranslation": "\"EGFR\"[Title/Abstract] AND \"cancer\"[Title/Abstract]"
+    }
+  }
+}
