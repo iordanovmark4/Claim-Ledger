@@ -1,4 +1,4 @@
-# Implementation Plan: Claim Ledger
+﻿# Implementation Plan: Claim Ledger
 
 ## Overview
 
@@ -26,7 +26,7 @@ Each correctness property from the design is implemented as its own property-bas
     - Assert every threshold and config default matches the specified values and that both dataclasses are frozen
     - _Requirements: 9.6, 2.7, 3.6_
 
-- [x] 2. Build fixture loaders against committed real responses (STEERING RULE 8 — do this before any parser)
+- [x] 2. Build fixture loaders against committed real responses (STEERING RULE 8 â€” do this before any parser)
   - [x] 2.1 Implement cache-envelope fixture loaders in conftest
     - In `tests/conftest.py`, add fixtures that read the committed real responses `data/cache/preflight_ot_search.json`, `preflight_ot_associations.json`, `preflight_pubmed_gene.json`, and `preflight_pubmed_gene_and_disease.json` and expose their `{source_url, retrieved_at, payload}` envelopes
     - Assert the observed real shapes so later parsers are written against them: OT `associatedDiseases.count` is an **int**; PubMed `esearchresult.count`/`retmax`/`retstart` are **strings**; one OT row has 6 `datatypeScores` and another has 3 with differing order; `querytranslation` present on the gene+disease response
@@ -66,7 +66,7 @@ Each correctness property from the design is implemented as its own property-bas
   - [x] 5.1 Implement EvidenceStore and normalized-request-key ID minting
     - Implement `EvidenceStore` with `add`, `get`, `contains`, keyed by `Evidence_ID`
     - Implement `evidence_id = source.value + ":" + sha256(normalized_request_key)[:16]` with per-source normalization (OT_SEARCH upper/trim symbol; OT_ASSOCIATIONS ensembl+top_n; PubMed canonicalized URL with sorted params, `tool`/`email` excluded from the hash)
-    - Build an `EvidenceRecord` from a cache envelope mapping `source_url`→`url`, `retrieved_at`→`retrieved_at`, `payload`→`payload` (Req 11.7)
+    - Build an `EvidenceRecord` from a cache envelope mapping `source_url`â†’`url`, `retrieved_at`â†’`retrieved_at`, `payload`â†’`payload` (Req 11.7)
     - _Requirements: 4.1, 4.2, 4.3, 11.7_
 
   - [x] 5.2 Write property test for Evidence_ID stability
@@ -223,18 +223,21 @@ Each correctness property from the design is implemented as its own property-bas
     - "Why this matters" panel (who benefits, plain-language explanation, data sources Open Targets and PubMed); "How to read this" legend (Verified/Unsupported and the two conflict flags); tamper/reset control wired to task 15; download control exporting Verified + Unsupported claims as JSON and the dossier as Markdown; ensure status is text-conveyed with sufficient contrast
     - _Requirements: 13.1, 13.3, 14.1, 14.2, 14.3, 14.4, 14.5_
 
-- [ ] 19. Final checkpoint and end-to-end offline validation
-  - [ ] 19.1 Validate end-to-end offline operation across all layers
+  - [x] 18.5 Visual restyle
+    - Presentation-only restyle: sharp, futuristic, black and gray with a mint green highlight. New palette defined once as CSS variables and reused; sharp corners (0-2px); JetBrains Mono for ids/numbers/badges/tab labels/section labels, Inter for body (with safe fallbacks). Restyle hero, metric tiles, buttons, flat mono tabs with a mint active underline, ledger table, Evidence tab, tamper before/after, side-by-side conflict panels with a VS divider, and the sidebar. Update .streamlit/config.toml to the new palette (UTF-8 no BOM). No change to logic, claim text, notice wording, or test behavior. Accessibility must not regress (body text contrast >= 4.5:1, mint keyboard focus ring, status always text + symbol, both mandatory notices visible on every tab).
+
+- [x] 19. Final checkpoint and end-to-end offline validation
+  - [x] 19.1 Validate end-to-end offline operation across all layers
     - Run the full test suite; run the pipeline offline end-to-end for each of the four Example_Genes and confirm resolution, retrieval, claim construction, verification, conflict detection, rendering, and export all succeed from cache only
     - _Requirements: 11.4, 12.1_
 
-  - [ ] 19.2 Checkpoint
+  - [x] 19.2 Checkpoint
     - Ensure all tests pass, ask the user if questions arise.
 
 ## Notes
 
 - Tasks marked with `*` are optional and can be skipped for a faster MVP; they are the unit, example-based, and property-based tests.
-- Each correctness property (Properties 1–11) is implemented by exactly one property-based test sub-task, placed close to the implementation it protects, annotated with its property number and the requirement clauses it validates.
+- Each correctness property (Properties 1â€“11) is implemented by exactly one property-based test sub-task, placed close to the implementation it protects, annotated with its property number and the requirement clauses it validates.
 - STEERING RULE 8 is honored by task 2 building fixture loaders against the committed real responses in `data/cache` before any parser (tasks 6 and 7) is written.
 - `recompute.py` (task 8) is built before the ClaimBuilder (task 9) and Verifier (task 10) so both share one numeric source of truth.
 - The fourth Example_Gene (task 16.1) must be selected and its cache fetched/created, then validated to trip at least one conflict flag at the default thresholds before it is registered.

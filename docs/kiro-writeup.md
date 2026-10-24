@@ -38,7 +38,11 @@ TODO: after the build, add one or two sentences on what each hook actually did o
 
 ## 5. MCP
 
-TODO. Not used yet. If we build the small MCP server (Open Targets and PubMed lookups, or exposing the verifier as a tool), describe what it enabled. If we do not build it, delete this section rather than inventing a story.
+We built a small stdio MCP server (`mcp_server/server.py`) and registered it in `.kiro/settings/mcp.json` as `claim-ledger`. It exposes two tools: `lookup_gene_evidence(symbol)`, which runs the offline pipeline and returns verified claims, unsupported claims and conflict flags with their Evidence_IDs, and `verify_claim(claim_json, gene_symbol)`, which recomputes a claim's number from its saved evidence.
+
+We checked it in two ways. A smoke test over a real subprocess completed the MCP handshake and listed both tools. Then, from a Kiro chat, Kiro called `lookup_gene_evidence` for TP53 and got 20 verified claims, 0 unsupported and one Literature_Gap flag, and `verify_claim` on the top association returned Verified with a recomputed value identical to the claimed one.
+
+Why it matters: Kiro can ask the verifier whether a number is backed by evidence while it works, instead of trusting its own output. The server uses the offline cache only, so it needs no network or keys.
 
 ## 6. Property-based testing
 

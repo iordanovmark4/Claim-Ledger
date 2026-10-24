@@ -62,7 +62,7 @@ EXAMPLE_GENES: tuple[str, ...] = tuple(
     g for g in Config().example_genes if isinstance(g, str) and g
 )
 
-# Status glyphs — a symbol paired with the text label so status is never
+# Status glyphs ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â a symbol paired with the text label so status is never
 # conveyed by color alone (Req 10.3, 14.3).
 _STATUS_SYMBOL = {
     ClaimStatus.VERIFIED: "\u2713",      # check mark
@@ -78,7 +78,7 @@ def validate_gene_input(raw: str) -> tuple[bool, str, Optional[str]]:
     """Validate a raw gene-input string (Req 1.4).
 
     Returns ``(ok, cleaned, message)``. The input is only stripped of
-    surrounding whitespace — never upper-cased — because the resolver matches
+    surrounding whitespace ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â never upper-cased ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â because the resolver matches
     case-insensitively. An empty or whitespace-only input is invalid and yields
     a user-facing message with ``ok=False``; no retrieval should be issued for
     it.
@@ -121,7 +121,7 @@ def claim_value_display(claim: Claim) -> str:
 
     Deterministic and type-aware: a score to four decimals, a count with
     thousands separators, a PMID or a datatype breakdown summarized by id. Never
-    fabricates — it only formats the value already on the claim.
+    fabricates ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â it only formats the value already on the claim.
     """
     value = claim.value
     if claim.claim_type is ClaimType.ASSOCIATION:
@@ -149,108 +149,220 @@ def claim_value_display(claim: Claim) -> str:
 
 _CSS = """
 <style>
-/* --- Claim Ledger theme: navy canvas, teal accent, calm scientific feel --- */
+/* =========================================================================
+   Claim Ledger -- task 18.5 restyle: sharp, futuristic, black + gray + mint.
+   All color/shape/type lives here; logic, claim text and notices are untouched.
+   Palette defined once as CSS variables and reused everywhere.
+   ========================================================================= */
 :root {
-  --cl-bg: #0B1220;
-  --cl-card: #141C2B;
-  --cl-border: #243049;
-  --cl-text: #E8EDF4;
-  --cl-muted: #9FB0C8;
-  --cl-accent: #2DD4BF;
-  --cl-verified-bg: #10332E;
-  --cl-verified-fg: #7FEAD9;
-  --cl-unsupported-bg: #3A1F27;
-  --cl-unsupported-fg: #F6B6C2;
+  --cl-bg:        #0A0A0B;   /* page background */
+  --cl-card:      #121214;   /* surface / cards */
+  --cl-raised:    #18181B;   /* raised panels */
+  --cl-border:    #2A2A2E;   /* hairline borders */
+  --cl-text:      #E8E8EA;   /* body text */
+  --cl-muted:     #9A9AA2;   /* muted text */
+  --cl-mint:      #3EF2B0;   /* accent */
+  --cl-mint-dim:  rgba(62,242,176,0.12);
+  --cl-warn:      #FFB020;   /* unsupported / warning (amber) */
+  --cl-warn-dim:  rgba(255,176,32,0.12);
+  --cl-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, Menlo, monospace;
+  --cl-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* generous, uncluttered spacing */
-.block-container { padding-top: 2.2rem; max-width: 1100px; }
+/* Web fonts (optional): the page must still work if these fail to load, so the
+   font stacks above always carry system fallbacks. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
 
-/* Hero */
-.cl-hero { margin-bottom: 0.4rem; }
-.cl-hero-name { font-size: 2.1rem; font-weight: 700; letter-spacing: -0.01em; color: var(--cl-text); margin: 0; }
-.cl-hero-promise { color: var(--cl-accent); font-weight: 600; font-size: 1.05rem; margin: 0.15rem 0 0 0; }
-.cl-hero-sub { color: var(--cl-muted); font-size: 0.98rem; margin: 0.5rem 0 0 0; max-width: 60ch; line-height: 1.5; }
+html, body, [data-testid="stAppViewContainer"], .stApp {
+  background: var(--cl-bg);
+  color: var(--cl-text);
+  font-family: var(--cl-sans);
+}
+.block-container { padding-top: 2.2rem; max-width: 1120px; }
 
-/* Cards */
+/* Faint grid texture behind the hero area only (subtle, non-animated). */
+.cl-hero {
+  margin-bottom: 0.5rem;
+  padding: 0.2rem 0 0.2rem 0;
+  background-image:
+    linear-gradient(var(--cl-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--cl-border) 1px, transparent 1px);
+  background-size: 34px 34px;
+  background-position: -1px -1px;
+  background-blend-mode: normal;
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.5), transparent 70%);
+          mask-image: linear-gradient(180deg, rgba(0,0,0,0.5), transparent 70%);
+}
+.cl-hero-name {
+  font-family: var(--cl-sans);
+  font-size: 2.3rem; font-weight: 700; letter-spacing: -0.01em;
+  color: var(--cl-text); margin: 0; line-height: 1.1;
+}
+.cl-hero-name .cl-accent-word {
+  color: var(--cl-mint);
+  border-bottom: 2px solid var(--cl-mint);
+  padding-bottom: 1px;
+}
+.cl-hero-promise {
+  font-family: var(--cl-mono);
+  color: var(--cl-mint); font-weight: 600; font-size: 0.95rem;
+  letter-spacing: 0.02em; margin: 0.5rem 0 0 0;
+}
+.cl-hero-sub { color: var(--cl-muted); font-size: 0.98rem; margin: 0.5rem 0 0 0; max-width: 64ch; line-height: 1.55; }
+
+/* Small uppercase mono section labels with a mint "//" prefix. */
+.cl-section-label {
+  font-family: var(--cl-mono);
+  text-transform: uppercase; letter-spacing: 0.12em;
+  font-size: 0.74rem; color: var(--cl-muted);
+  margin: 0.2rem 0 0.6rem 0;
+}
+.cl-section-label::before { content: "// "; color: var(--cl-mint); }
+
+/* Cards -- sharp corners, hairline borders, thin mint left accent. */
 .cl-card {
   background: var(--cl-card);
   border: 1px solid var(--cl-border);
-  border-radius: 14px;
-  padding: 1.1rem 1.25rem;
+  border-left: 2px solid var(--cl-mint);
+  border-radius: 2px;
+  padding: 1rem 1.15rem;
   margin-bottom: 0.9rem;
 }
+
+/* Metric tiles -- bordered, 2px mint top edge, big mono numbers. */
 .cl-metric {
   background: var(--cl-card);
   border: 1px solid var(--cl-border);
-  border-radius: 14px;
-  padding: 0.9rem 1.1rem;
-  text-align: left;
+  border-top: 2px solid var(--cl-mint);
+  border-radius: 2px;
+  padding: 0.85rem 1.05rem;
 }
-.cl-metric .cl-metric-label { color: var(--cl-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; margin: 0; }
-.cl-metric .cl-metric-value { color: var(--cl-text); font-size: 1.9rem; font-weight: 700; margin: 0.1rem 0 0 0; }
+.cl-metric .cl-metric-label {
+  font-family: var(--cl-mono);
+  color: var(--cl-muted); font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.1em; margin: 0;
+}
+.cl-metric .cl-metric-value {
+  font-family: var(--cl-mono);
+  color: var(--cl-mint); font-size: 2rem; font-weight: 700;
+  margin: 0.15rem 0 0 0; font-variant-numeric: tabular-nums;
+}
 
-/* Status badges: text + symbol, never color alone */
+/* Status badges -- sharp, mono, uppercase; text + symbol, never color alone. */
 .cl-badge {
   display: inline-block;
-  padding: 0.12rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border: 1px solid transparent;
-  white-space: nowrap;
+  font-family: var(--cl-mono);
+  padding: 0.1rem 0.5rem;
+  border-radius: 2px;
+  font-size: 0.78rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  border: 1px solid transparent; white-space: nowrap;
 }
-.cl-badge-verified { background: var(--cl-verified-bg); color: var(--cl-verified-fg); border-color: #1C5248; }
-.cl-badge-unsupported { background: var(--cl-unsupported-bg); color: var(--cl-unsupported-fg); border-color: #6B2F3C; }
+.cl-badge-verified { background: var(--cl-mint-dim); color: var(--cl-mint); border-color: var(--cl-mint); }
+.cl-badge-unsupported { background: var(--cl-warn-dim); color: var(--cl-warn); border-color: var(--cl-warn); }
 
-/* Notices */
+/* Notices -- hairline card with a thin mint left edge. */
 .cl-notice {
   background: var(--cl-card);
   border: 1px solid var(--cl-border);
-  border-left: 3px solid var(--cl-accent);
-  border-radius: 10px;
-  padding: 0.6rem 0.9rem;
-  color: var(--cl-text);
-  font-size: 0.9rem;
+  border-left: 2px solid var(--cl-mint);
+  border-radius: 2px;
+  padding: 0.55rem 0.9rem;
+  color: var(--cl-text); font-size: 0.9rem;
   margin-bottom: 0.5rem;
 }
 .cl-notice-strong { font-weight: 700; }
 
-/* Side-by-side conflict layout */
-.cl-sides { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+/* Side-by-side conflict panels with a thin "VS" divider. */
+.cl-sides { display: flex; gap: 0; align-items: stretch; flex-wrap: wrap; }
 .cl-side {
   flex: 1 1 300px;
   background: var(--cl-card);
   border: 1px solid var(--cl-border);
-  border-radius: 12px;
+  border-radius: 2px;
   padding: 0.9rem 1rem;
 }
-.cl-side h4 { margin: 0 0 0.4rem 0; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--cl-muted); }
-.cl-rule-name { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--cl-accent); font-weight: 600; }
+.cl-side h4 {
+  font-family: var(--cl-mono);
+  margin: 0 0 0.4rem 0; font-size: 0.74rem;
+  text-transform: uppercase; letter-spacing: 0.1em; color: var(--cl-muted);
+}
+.cl-vs {
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--cl-mono); font-size: 0.72rem; font-weight: 700;
+  color: var(--cl-mint); letter-spacing: 0.1em;
+  padding: 0 0.7rem; min-width: 2.2rem;
+}
+.cl-rule-name { font-family: var(--cl-mono); color: var(--cl-mint); font-weight: 600; letter-spacing: 0.03em; }
 
-/* Monospace Evidence_IDs */
-.cl-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.85rem; color: var(--cl-muted); }
+/* Monospace helper for ids / numbers / queries. */
+.cl-mono { font-family: var(--cl-mono); font-size: 0.84rem; color: var(--cl-muted); }
 
-/* Ledger table: aligned, subtle row separation, monospace ids */
+/* Ledger table -- dark rows, hairline dividers, mono ids, tabular numbers. */
 .cl-ledger { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
 .cl-ledger th {
+  font-family: var(--cl-mono);
   text-align: left; color: var(--cl-muted); font-weight: 600;
-  font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em;
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;
   padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--cl-border);
 }
-.cl-ledger td { padding: 0.5rem 0.6rem; border-bottom: 1px solid rgba(36,48,73,0.5); color: var(--cl-text); vertical-align: top; }
-.cl-ledger td.cl-id { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.82rem; color: var(--cl-muted); }
-.cl-ledger td.cl-num { text-align: right; font-variant-numeric: tabular-nums; }
-.cl-ledger tr:hover td { background: rgba(45,212,191,0.04); }
+.cl-ledger td { padding: 0.5rem 0.6rem; border-bottom: 1px solid rgba(42,42,46,0.6); color: var(--cl-text); vertical-align: top; }
+.cl-ledger td.cl-id { font-family: var(--cl-mono); font-size: 0.8rem; color: var(--cl-muted); }
+.cl-ledger td.cl-num { text-align: right; font-family: var(--cl-mono); font-variant-numeric: tabular-nums; }
+.cl-ledger tr:hover td { background: var(--cl-mint-dim); }
 
 /* Legend */
-.cl-legend-item { margin-bottom: 0.35rem; color: var(--cl-text); font-size: 0.9rem; }
+.cl-legend-item { margin-bottom: 0.4rem; color: var(--cl-text); font-size: 0.9rem; }
 
-/* Keyboard focus: never remove; strengthen for visibility (accessibility) */
+/* Streamlit widget accents -- primary button solid mint w/ black text; example
+   buttons outlined gray -> mint on hover; tabs flat mono w/ mint active underline. */
+.stButton > button[kind="primary"] {
+  background: var(--cl-mint); color: #0A0A0B; font-weight: 700;
+  border: 1px solid var(--cl-mint); border-radius: 2px;
+  font-family: var(--cl-mono); letter-spacing: 0.03em;
+}
+.stButton > button[kind="primary"]:hover { background: #2FD79B; border-color: #2FD79B; color: #0A0A0B; }
+.stButton > button[kind="secondary"] {
+  background: transparent; color: var(--cl-text);
+  border: 1px solid var(--cl-border); border-radius: 2px;
+  font-family: var(--cl-mono); letter-spacing: 0.02em;
+}
+.stButton > button[kind="secondary"]:hover { border-color: var(--cl-mint); color: var(--cl-mint); }
+.stDownloadButton > button {
+  background: transparent; color: var(--cl-text);
+  border: 1px solid var(--cl-border); border-radius: 2px; font-family: var(--cl-mono);
+}
+.stDownloadButton > button:hover { border-color: var(--cl-mint); color: var(--cl-mint); }
+
+/* Tabs: flat, mono uppercase, mint underline on the active tab. */
+.stTabs [data-baseweb="tab-list"] { gap: 0.3rem; border-bottom: 1px solid var(--cl-border); }
+.stTabs [data-baseweb="tab"] {
+  font-family: var(--cl-mono); text-transform: uppercase;
+  letter-spacing: 0.08em; font-size: 0.8rem; color: var(--cl-muted);
+  background: transparent; border-radius: 0;
+}
+.stTabs [aria-selected="true"] {
+  color: var(--cl-mint) !important;
+  border-bottom: 2px solid var(--cl-mint) !important;
+}
+
+/* Inputs: sharp, hairline, mint focus. */
+.stTextInput input, .stNumberInput input {
+  background: var(--cl-raised); color: var(--cl-text);
+  border: 1px solid var(--cl-border); border-radius: 2px;
+}
+
+/* Sidebar: slightly darker than the page. */
+[data-testid="stSidebar"] { background: #0E0E10; border-right: 1px solid var(--cl-border); }
+[data-testid="stSidebar"] .cl-section-label { color: var(--cl-muted); }
+
+/* Keyboard focus: never remove; strong mint ring + faint glow (accessibility). */
 a:focus-visible, button:focus-visible, input:focus-visible,
-[role="button"]:focus-visible, [tabindex]:focus-visible {
-  outline: 3px solid var(--cl-accent) !important;
+[role="button"]:focus-visible, [role="tab"]:focus-visible,
+[data-baseweb="tab"]:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--cl-mint) !important;
   outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px var(--cl-mint-dim) !important;
 }
 </style>
 """
@@ -285,11 +397,28 @@ def render_notices() -> None:
     )
 
 
+def _hero_name_html() -> str:
+    """Render APP_NAME with its final word mint-accented (presentation only).
+
+    Splits on the last space so "Claim Ledger" shows "Ledger" in the mint accent
+    with a thin underline. APP_NAME itself is unchanged; this only wraps it in
+    display markup. Falls back to the plain escaped name if there is no space.
+    """
+    name = APP_NAME.strip()
+    if " " in name:
+        head, _, tail = name.rpartition(" ")
+        return (
+            f"{_escape(head)} "
+            f'<span class="cl-accent-word">{_escape(tail)}</span>'
+        )
+    return f'<span class="cl-accent-word">{_escape(name)}</span>'
+
+
 def render_hero(result: Optional[PipelineResult]) -> None:
     """Hero header: name, promise, subtitle, and three status metric cards."""
     st.markdown(
         f'<div class="cl-hero">'
-        f'<p class="cl-hero-name">{APP_NAME}</p>'
+        f'<p class="cl-hero-name">{_hero_name_html()}</p>'
         f'<p class="cl-hero-promise">{APP_PROMISE}</p>'
         f'<p class="cl-hero-sub">{APP_SUBTITLE}</p>'
         f"</div>",
@@ -462,7 +591,7 @@ def _run_chosen_hit(hit, thresholds: Thresholds, offline: bool) -> None:
 
 def render_input(thresholds: Thresholds, offline: bool) -> None:
     """Gene text input + Analyze button + four example buttons (Req 1.1, 1.4)."""
-    st.markdown("### Analyze a gene")
+    st.markdown('<p class="cl-section-label">ANALYZE A GENE</p>', unsafe_allow_html=True)
     col_in, col_btn = st.columns([4, 1])
     with col_in:
         gene_text = st.text_input(
@@ -527,7 +656,7 @@ def _display_claim(result: PipelineResult, claim: Claim) -> Claim:
 
 def render_dossier_tab(result: PipelineResult) -> None:
     render_notices()
-    st.markdown(f"#### Dossier for {result.gene_symbol}")
+    st.markdown(f'<p class="cl-section-label">DOSSIER // {_escape(result.gene_symbol)}</p>', unsafe_allow_html=True)
     if result.dossier_markdown.strip():
         st.markdown(result.dossier_markdown)
     else:
@@ -536,7 +665,7 @@ def render_dossier_tab(result: PipelineResult) -> None:
 
 def render_ledger_tab(result: PipelineResult) -> None:
     render_notices()
-    st.markdown("#### Claim ledger")
+    st.markdown('<p class="cl-section-label">EVIDENCE LEDGER</p>', unsafe_allow_html=True)
     st.caption(
         "Every claim, verified or not. Status is shown as text and a symbol."
     )
@@ -654,7 +783,7 @@ def _perturbed_value(claim: Claim) -> object:
 
 def render_conflicts_tab(result: PipelineResult) -> None:
     render_notices()
-    st.markdown("#### Conflicts")
+    st.markdown('<p class="cl-section-label">CONFLICT CHECK</p>', unsafe_allow_html=True)
     st.caption(
         "Each flagged association is shown with both sides of its evidence "
         "side by side. Adjust thresholds in the sidebar to re-evaluate."
@@ -715,6 +844,7 @@ def render_conflicts_tab(result: PipelineResult) -> None:
             )
         st.markdown(
             f'<div class="cl-sides"><div class="cl-side">{left}</div>'
+            f'<div class="cl-vs">VS</div>'
             f'<div class="cl-side">{right}</div></div>',
             unsafe_allow_html=True,
         )
@@ -732,7 +862,7 @@ def _pair_query_strings(store, pair_evidence_id: Optional[str]) -> tuple[str, st
 
 def render_evidence_tab(result: PipelineResult) -> None:
     render_notices()
-    st.markdown("#### Evidence")
+    st.markdown('<p class="cl-section-label">EVIDENCE TRAIL</p>', unsafe_allow_html=True)
     st.caption("For each claim: source, URL, when it was retrieved, and whether it came from cache.")
 
     store = result.store
@@ -778,7 +908,7 @@ def render_evidence_tab(result: PipelineResult) -> None:
 
 def render_why_tab(result: Optional[PipelineResult]) -> None:
     render_notices()
-    st.markdown("#### Why this matters")
+    st.markdown('<p class="cl-section-label">WHY THIS MATTERS</p>', unsafe_allow_html=True)
     st.markdown(
         "**Who benefits.** Researchers and curious readers who want to see the "
         "evidence behind a gene-disease claim, not just a number.\n\n"
@@ -791,7 +921,7 @@ def render_why_tab(result: Optional[PipelineResult]) -> None:
         "per-datatype breakdowns) and PubMed (literature and co-mention counts, "
         "and recent papers)."
     )
-    st.markdown("##### How to read this")
+    st.markdown('<p class="cl-section-label">HOW TO READ THIS</p>', unsafe_allow_html=True)
     st.markdown(
         f'<div class="cl-legend-item">{_status_badge_html(ClaimStatus.VERIFIED)} '
         "&mdash; the number matches the value recomputed from its saved evidence."
@@ -816,7 +946,7 @@ def render_why_tab(result: Optional[PipelineResult]) -> None:
 
 def _render_downloads(result: PipelineResult) -> None:
     """Download buttons: claims as JSON, dossier as Markdown (Req 14.5)."""
-    st.markdown("##### Downloads")
+    st.markdown('<p class="cl-section-label">DOWNLOADS</p>', unsafe_allow_html=True)
     exporter = Exporter()
     disease_names = {a.disease_id: a.disease_name for a in result.associations}
     claims_json = exporter.export_claims_json(

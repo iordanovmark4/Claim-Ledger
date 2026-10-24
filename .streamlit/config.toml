@@ -1,25 +1,24 @@
-# Claim Ledger — Streamlit theme
+# Claim Ledger -- Streamlit theme (task 18.5 restyle)
 #
-# Palette choice (committed to, one consistent direction): a deep near-black
-# navy canvas with a confident teal accent. Rationale: the app is an evidence
-# audit tool, and a dark, low-noise canvas keeps the focus on claims, scores,
-# and status badges rather than on chrome. One accent (teal) carries all
-# interactive emphasis; status meaning is NEVER carried by color alone (every
-# badge also shows a text label + a symbol, see app.inject_css()).
+# Palette: sharp, futuristic, black and gray with a mint green highlight.
+# One accent (mint) carries all interactive emphasis; status meaning is NEVER
+# carried by color alone (every badge also shows a text label + a symbol, see
+# app.inject_css()). Defined once here and mirrored as CSS variables in app.py.
 #
-# Contrast (aimed at WCAG AA, 4.5:1 for normal text):
-#   textColor #E8EDF4 on backgroundColor #0B1220        -> ~15.2:1 (AAA)
-#   textColor #E8EDF4 on secondaryBackgroundColor #141C2B -> ~12.8:1 (AAA)
-#   accent  #2DD4BF  on backgroundColor #0B1220          -> ~9.4:1  (AAA)
-# Keyboard focus outlines are preserved/strengthened in CSS (never removed).
+# Contrast (WCAG AA, >= 4.5:1 for normal text):
+#   textColor #E8E8EA on backgroundColor #0A0A0B          -> ~16.6:1 (AAA)
+#   textColor #E8E8EA on secondaryBackgroundColor #121214 -> ~15.5:1 (AAA)
+#   mint #3EF2B0 on #0A0A0B                                -> ~13.9:1 (AAA)
+# Keyboard focus outlines are preserved/strengthened in CSS (mint, never removed).
+# This file is written as UTF-8 WITHOUT a BOM.
 
 [theme]
 base = "dark"
-primaryColor = "#2DD4BF"             # teal accent — the single interactive emphasis
-backgroundColor = "#0B1220"          # deep near-black navy canvas
-secondaryBackgroundColor = "#141C2B" # cards, sidebar, inputs
-textColor = "#E8EDF4"                # off-white, high contrast on both backgrounds
-font = "sans serif"                  # clean system sans-serif stack
+primaryColor = "#3EF2B0"             # mint accent -- the single interactive emphasis
+backgroundColor = "#0A0A0B"          # near-black page canvas
+secondaryBackgroundColor = "#121214" # cards, sidebar, inputs
+textColor = "#E8E8EA"                # off-white, high contrast on both backgrounds
+font = "monospace"                   # mono-forward; body uses Inter via injected CSS
 
 [server]
 headless = true
