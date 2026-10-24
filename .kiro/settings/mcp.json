@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "claim-ledger": {
+      "command": "python",
+      "args": ["-m", "mcp_server.server"],
+      "env": {},
+      "disabled": false,
+      "autoApprove": ["lookup_gene_evidence", "verify_claim"]
+    }
+  }
+}

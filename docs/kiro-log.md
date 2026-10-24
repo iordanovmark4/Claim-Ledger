@@ -1,2 +1,9 @@
 Bug (Property 10, Evidence_ID stability): ot_search_request_key normalized symbols with str.upper(), so U+0130 "İ" and its lower-cased form "i\u0307" minted two different Evidence_IDs for one logical symbol — breaking OT_SEARCH cache/live parity.
 Fix: normalize via unicodedata.normalize("NFKC", symbol.strip()).casefold() so case-insensitive symbol matching holds across all of Unicode, not just ASCII; counterexample pinned by test_ot_search_dotted_capital_i_regression.
+
+MCP server (mcp_server/): added a read-only Model Context Protocol server exposing lookup_gene_evidence(symbol) and verify_claim(claim_json, gene_symbol), both reusing the existing Pipeline/Verifier over the committed data/cache so an external agent can pull a gene's Verified/Unsupported claims (with Evidence_IDs) and conflict flags, and independently re-verify any claim against its saved evidence — entirely offline.
+This let the whole evidence-first contract be exercised from outside the Streamlit app: proven against PANK2 (19 Verified, 0 Unsupported, 4 conflict flags, all_from_cache=True) and by re-verifying a claim (unchanged → Verified; value tampered by +0.25 → Unsupported, reason "claim value 1.096… != recomputed 0.846…"), showing the Verifier rejects a mismatch without repairing it.
+
+Tooling (task 18.1): the spec-task-execution subagent dispatch was persistently blocked by the orchestration `child is not ready` guard after an interrupted first run, across every update/dispatch ordering and a full not_started->in_progress reset.
+Resolution: per the user's instruction the Streamlit UI (app.py, tests/test_app.py, README.md) was built directly by the orchestrator instead, honoring the same rules (steering evidence-rules, no weakened tests, pytest + headless boot checks); the 18.x tasks were marked complete only after 234 tests passed and the app booted headless cleanly.
+

@@ -616,6 +616,44 @@
         "executionId": "0ec68f01-21ac-4723-b1c2-f4550e2e71e9",
         "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
         "timestamp": 1792874065715
+      },
+      {
+        "executionId": "ca270e16-f301-4b1f-a661-d40b598af384",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792874439001
+      },
+      {
+        "executionId": "ca270e16-f301-4b1f-a661-d40b598af384",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792874443948
+      }
+    ],
+    "18.2 Implement the results screen with mandatory notices and the claim ledger": [
+      {
+        "executionId": "3c4e6bd0-03ff-4aa9-8d3d-7812ef45c909",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792875251303
+      }
+    ],
+    "18.3 Implement threshold controls and side-by-side conflict panels": [
+      {
+        "executionId": "3c4e6bd0-03ff-4aa9-8d3d-7812ef45c909",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792875252686
+      }
+    ],
+    "18.4 Implement help panels, tamper/reset control, export control, and accessibility": [
+      {
+        "executionId": "3c4e6bd0-03ff-4aa9-8d3d-7812ef45c909",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792875253706
+      }
+    ],
+    "18. Build the Streamlit UI": [
+      {
+        "executionId": "3c4e6bd0-03ff-4aa9-8d3d-7812ef45c909",
+        "chatSessionId": "sess_fe02da2c-cefc-475e-907c-7bf55be13e9b",
+        "timestamp": 1792875253760
       }
     ]
   }

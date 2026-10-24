@@ -206,20 +206,20 @@ Each correctness property from the design is implemented as its own property-bas
     - Implement `Pipeline` holding the per-run `EvidenceStore` and sequencing resolve -> OT associations -> PubMed gene + per-disease pairs (rate-limited, cache-first) -> build claims -> verify -> detect conflicts -> render, returning Verified_Claims, Unsupported_Claims, conflict flags, and the dossier
     - _Requirements: 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 8.1, 9.1, 11.4_
 
-- [ ] 18. Build the Streamlit UI
-  - [-] 18.1 Implement gene input, validation, and disambiguation
+- [x] 18. Build the Streamlit UI
+  - [x] 18.1 Implement gene input, validation, and disambiguation
     - Text input for a Gene_Symbol; empty/whitespace submit shows a validation message and issues no OT request; when no exact name match, render target hits as a selectable disambiguation list with no auto-select and drive resolution from the user's choice
     - _Requirements: 1.1, 1.4, 1.6, 1.7_
 
-  - [ ] 18.2 Implement the results screen with mandatory notices and the claim ledger
+  - [x] 18.2 Implement the results screen with mandatory notices and the claim ledger
     - Persistent "Evidence summary, not medical advice" notice; the verification note (verification confirms a number matches saved evidence, not that the finding is true); claim ledger showing status as text (never color alone) with Unsupported claims listing type, Evidence_IDs, and reason; provenance view showing source/url/retrieved_at and, for co-mention counts, the submitted query and Query_Translation, plus a "came from cache" indicator
     - _Requirements: 4.7, 7.1, 7.4, 10.4, 10.6, 11.5, 14.3_
 
-  - [ ] 18.3 Implement threshold controls and side-by-side conflict panels
+  - [x] 18.3 Implement threshold controls and side-by-side conflict panels
     - Display current threshold values with defaults (min_supporting_datatypes=2, support_threshold=0.3, high_score_threshold=0.5, low_co_mention_threshold=100) and re-run the Conflict_Detector on change; render each flagged association in a side-by-side panel named `Single_Source_Dependence`/`Literature_Gap`, showing counted datatype scores on one side and overall score vs co-mention count on the other, hiding neither side
     - _Requirements: 9.4, 9.5, 9.6, 9.7, 9.8_
 
-  - [ ] 18.4 Implement help panels, tamper/reset control, export control, and accessibility
+  - [x] 18.4 Implement help panels, tamper/reset control, export control, and accessibility
     - "Why this matters" panel (who benefits, plain-language explanation, data sources Open Targets and PubMed); "How to read this" legend (Verified/Unsupported and the two conflict flags); tamper/reset control wired to task 15; download control exporting Verified + Unsupported claims as JSON and the dossier as Markdown; ensure status is text-conveyed with sufficient contrast
     - _Requirements: 13.1, 13.3, 14.1, 14.2, 14.3, 14.4, 14.5_
 

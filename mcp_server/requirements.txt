@@ -1,0 +1,14 @@
+# Runtime dependencies for the Claim Ledger MCP server.
+#
+# The server reuses the existing `claimledger` package (in ../src) and implements
+# the MCP stdio protocol (JSON-RPC 2.0) with the Python standard library only, so
+# it needs no third-party MCP SDK at runtime. The single dependency below is what
+# `claimledger` itself needs to parse the cached Open Targets / PubMed responses.
+#
+# Install into the same environment that runs the server:
+#   pip install -r mcp_server/requirements.txt
+#
+# `claimledger` is imported from ../src via sys.path (no install required); if you
+# prefer, `pip install -e .` from the repo root installs it as a package instead.
+
+requests==2.34.2

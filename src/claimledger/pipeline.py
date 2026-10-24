@@ -1,4 +1,4 @@
-"""Pipeline orchestrator wiring all layers (Req 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 8.1, 9.1, 11.4).
+﻿"""Pipeline orchestrator wiring all layers (Req 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 8.1, 9.1, 11.4).
 
 ``Pipeline`` is the single reusable orchestrator the UI (task 18) and the tests
 call instead of hand-wiring the layers. It holds a per-run
@@ -20,9 +20,9 @@ dossier Markdown in one :class:`PipelineResult`.
 
 This mirrors exactly the wiring the offline end-to-end test exercises in its
 ``run_offline_pipeline`` helper (``tests/test_offline.py``): the Evidence_IDs
-are minted the same way the clients mint them — via the shared ``*_request_key``
+are minted the same way the clients mint them â€” via the shared ``*_request_key``
 helpers + :func:`~claimledger.evidence.mint_evidence_id` and the pure
-``build_esearch_*`` URL/param builders — so the ids wired into the
+``build_esearch_*`` URL/param builders â€” so the ids wired into the
 :class:`~claimledger.claims.ClaimBuilder` are *exactly* the ids the clients
 stored in the :class:`EvidenceStore`, and a freshly built claim verifies by
 construction.
@@ -32,7 +32,7 @@ Construction / dependency injection
 ``Pipeline(config=Config(), fetcher=None)`` builds its own
 :class:`~claimledger.http.HttpFetcher` (hence its own
 :class:`~claimledger.cache.ResponseCache` and :class:`~claimledger.http.RateLimiter`)
-from the config when none is injected. A caller — notably a test — may inject an
+from the config when none is injected. A caller â€” notably a test â€” may inject an
 *offline* fetcher so the whole run is served from the committed cache with no
 network::
 
@@ -120,7 +120,7 @@ class PipelineResult:
     ensembl_id:
         The resolved Ensembl_ID, or ``None`` when resolution did not succeed.
     resolve_outcome:
-        The :class:`ResolveOutcome` from the resolution step — the discriminant
+        The :class:`ResolveOutcome` from the resolution step â€” the discriminant
         the UI branches on (``RESOLVED`` / ``NOT_FOUND`` / ``DISAMBIGUATE``,
         Req 1.5, 1.6).
     associations:
@@ -158,6 +158,14 @@ class PipelineResult:
     dossier_markdown: str = ""
     any_from_cache: bool = False
     all_from_cache: bool = False
+    # The per-run evidence store and the disease_id -> pair Evidence_ID map are
+    # exposed so the UI (task 18) can show per-claim provenance (Evidence tab),
+    # resolve a claim's EvidenceRecord for the Tamper_Control, and indicate
+    # "from cache" per record (Req 4.7, 11.5, 13). Optional + default None so
+    # existing callers/tests that build a PipelineResult without them are
+    # unaffected.
+    store: Optional[EvidenceStore] = None
+    pair_evidence_ids: dict[str, str] = field(default_factory=dict)
 
     @property
     def status(self) -> ResolveStatus:
@@ -284,7 +292,7 @@ class Pipeline:
         ensembl_id:
             The resolved Ensembl_ID to retrieve associations for.
         resolved_symbol:
-            The resolved approved symbol — the subject of every claim and the
+            The resolved approved symbol â€” the subject of every claim and the
             gene half of each ``GENE::DISEASE`` pair, and the gene term for the
             PubMed queries.
         resolve_outcome:
@@ -398,6 +406,8 @@ class Pipeline:
             dossier_markdown=dossier,
             any_from_cache=any_from_cache,
             all_from_cache=all_from_cache,
+            store=store,
+            pair_evidence_ids=pair_evidence_ids,
         )
 
     @staticmethod
@@ -405,7 +415,7 @@ class Pipeline:
         """Summarize the from_cache flags of every record in ``store`` (Req 11.4).
 
         Returns ``(any_from_cache, all_from_cache)``. With no records gathered
-        (everything unavailable) both are ``False`` — there is no cached evidence
+        (everything unavailable) both are ``False`` â€” there is no cached evidence
         to have come from.
         """
         records = list(store._records.values())
