@@ -1,0 +1,138 @@
+{
+  "source_url": "https://api.platform.opentargets.org/api/v4/graphql",
+  "retrieved_at": "2026-10-24T15:21:35.397303Z",
+  "payload": {
+    "data": {
+      "__type": {
+        "fields": [
+          {
+            "name": "pathways"
+          },
+          {
+            "name": "approvedSymbol"
+          },
+          {
+            "name": "chemicalProbes"
+          },
+          {
+            "name": "tractability"
+          },
+          {
+            "name": "nameSynonyms"
+          },
+          {
+            "name": "dbXrefs"
+          },
+          {
+            "name": "approvedName"
+          },
+          {
+            "name": "obsoleteSymbols"
+          },
+          {
+            "name": "functionDescriptions"
+          },
+          {
+            "name": "genomicLocation"
+          },
+          {
+            "name": "subcellularLocations"
+          },
+          {
+            "name": "geneticConstraint"
+          },
+          {
+            "name": "homologues"
+          },
+          {
+            "name": "transcriptIds"
+          },
+          {
+            "name": "canonicalTranscript"
+          },
+          {
+            "name": "targetClass"
+          },
+          {
+            "name": "obsoleteNames"
+          },
+          {
+            "name": "id"
+          },
+          {
+            "name": "biotype"
+          },
+          {
+            "name": "symbolSynonyms"
+          },
+          {
+            "name": "proteinIds"
+          },
+          {
+            "name": "geneOntology"
+          },
+          {
+            "name": "safetyLiabilities"
+          },
+          {
+            "name": "transcripts"
+          },
+          {
+            "name": "alternativeGenes"
+          },
+          {
+            "name": "hallmarks"
+          },
+          {
+            "name": "synonyms"
+          },
+          {
+            "name": "credibleSets"
+          },
+          {
+            "name": "similarEntities"
+          },
+          {
+            "name": "literatureOcurrences"
+          },
+          {
+            "name": "evidences"
+          },
+          {
+            "name": "interactions"
+          },
+          {
+            "name": "mousePhenotypes"
+          },
+          {
+            "name": "baselineExpression"
+          },
+          {
+            "name": "associatedDiseases"
+          },
+          {
+            "name": "prioritisation"
+          },
+          {
+            "name": "isEssential"
+          },
+          {
+            "name": "depMapEssentiality"
+          },
+          {
+            "name": "pharmacogenomics"
+          },
+          {
+            "name": "proteinCodingCoordinates"
+          },
+          {
+            "name": "drugAndClinicalCandidates"
+          },
+          {
+            "name": "associationTimeSeries"
+          }
+        ]
+      }
+    }
+  }
+}

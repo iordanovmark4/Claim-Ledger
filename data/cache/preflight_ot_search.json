@@ -1,0 +1,17 @@
+{
+  "source_url": "https://api.platform.opentargets.org/api/v4/graphql",
+  "retrieved_at": "2026-10-24T15:21:34.685346Z",
+  "payload": {
+    "data": {
+      "search": {
+        "hits": [
+          {
+            "id": "ENSG00000146648",
+            "name": "EGFR",
+            "entity": "target"
+          }
+        ]
+      }
+    }
+  }
+}
